@@ -14,15 +14,14 @@ public class ListAggregatorTest {
     @Before
     public void setUp(){
         List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(4);
-        list.add(2);
-        list.add(5);
+        list.add(-1);
+        list.add(-4);
+        list.add(-5);
 
         this.list = list;
     }
 
+    /*
     @Test
     public void sum() {
         ListAggregator aggregator = new ListAggregator(list);
@@ -50,6 +49,7 @@ public class ListAggregatorTest {
         assertEquals(1, min);
     }
 
+
     @Test
     public void distinct() {
         ListAggregator aggregator = new ListAggregator(list);
@@ -57,5 +57,15 @@ public class ListAggregatorTest {
         int distinct = aggregator.distinct();
 
         assertEquals(4, distinct);
+    }
+    */
+
+    @Test
+    public void maxWithNegatives(){
+        ListAggregator aggregator = new ListAggregator(list);
+
+        int max = aggregator.max();
+
+        assertEquals(-1, max);
     }
 }
