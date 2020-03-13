@@ -9,17 +9,20 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class ListAggregatorTest {
+    /*
     private List<Integer> list;
 
     @Before
     public void setUp(){
         List<Integer> list = new ArrayList<>();
-        list.add(-1);
-        list.add(-4);
-        list.add(-5);
+        list.add(1);
+        list.add(2);
+        list.add(4);
+        list.add(2);
 
         this.list = list;
     }
+    */
 
     /*
     @Test
@@ -56,9 +59,9 @@ public class ListAggregatorTest {
 
         int distinct = aggregator.distinct();
 
-        assertEquals(4, distinct);
+        assertEquals(3, distinct);
     }
-    */
+
 
     @Test
     public void maxWithNegatives(){
@@ -67,5 +70,34 @@ public class ListAggregatorTest {
         int max = aggregator.max();
 
         assertEquals(-1, max);
+    }
+    */
+
+    @Test
+    public void distinct_bug8726(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(4);
+        list.add(2);
+
+        class Stub implements IListDeduplicator{
+            @Override
+            public List<Integer> deduplicate() {
+                List<Integer> stublist = new ArrayList<>();
+                stublist.add(1);
+                stublist.add(2);
+                stublist.add(4);
+
+                return stublist;
+            }
+        }
+        Stub stub = new Stub();
+
+        ListAggregator aggregator = new ListAggregator(list);
+
+        int distinct = aggregator.distinct(stub);
+
+        assertEquals(3, distinct);
     }
 }
