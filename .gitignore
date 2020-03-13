@@ -7,3 +7,12 @@ TPs/hero/.gradle/
 TPs/hero/out/
 TPs/hero/build/
 TPs/hero/*.iml
+
+TPs/operations/out/
+TPs/operations/*.idea/
+TPs/operations/.idea/
+TPs/operations/*iml
+
+TPs/helloworld/out/
+TPs/helloworld/.idea/
+TPs/helloworld/*.iml
