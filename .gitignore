@@ -16,4 +16,12 @@ TPs/operations/*iml
 TPs/helloworld/out/
 TPs/helloworld/.idea/
 TPs/helloworld/*.iml
-TPs/area-calculator
+
+TPs/area-calculator/gradle/
+TPs/area-calculator/build/
+TPs/area-calculator/.gradle/
+TPs/area-calculator/.idea/
+TPs/area-calculator/build.gradle
+TPs/area-calculator/gradlew
+TPs/area-calculator/gradlew.bat
+TPs/area-calculator/settings.gradle
