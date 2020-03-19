@@ -1,46 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Application {
     public static void main(String[] args) {
-        AreaAggregator areaAggregator = new AreaAggregator();
+        AreaAggregator aggregator = new AreaAggregator();
 
-        Square square1 = new Square(2);
-        Square square2 = new Square(3);
-        areaAggregator.add(square1);
-        areaAggregator.add(square2);
-        double sum1 = areaAggregator.sum();
+        aggregator.addShape(new Square(10));
+        aggregator.addShape(new Circle(5));
+        aggregator.addShape(new Circle(2));
+        aggregator.addShape(new Ellipse(2, 3));
+        aggregator.addShape(new Rectangle(10, 5));
+        aggregator.addShape(new Triangle(10, 2));
+        aggregator.addShape(new House(100));
 
-        AreaStringOutputter stringOutputter1 = new AreaStringOutputter(areaAggregator);
-        AreaXMLOutputter xmlOutputter1 = new AreaXMLOutputter(areaAggregator);
+        AreaStringOutputter stringOutputter = new AreaStringOutputter(aggregator);
+        AreaXMLOutputter xmlOutputter = new AreaXMLOutputter(aggregator);
 
-        System.out.println(stringOutputter1.output());
-        System.out.println(xmlOutputter1.output());
+        System.out.println(stringOutputter.output());
+        System.out.println(xmlOutputter.output());
 
-        Circle circle1 = new Circle(2);
-        areaAggregator.add(circle1);
-        double sum2 = areaAggregator.sum();
+        List<House> houses = new ArrayList<>();
+        houses.add(new House(50));
+        houses.add(new House(150));
 
-        AreaStringOutputter stringOutputter2 = new AreaStringOutputter(areaAggregator);
-        AreaXMLOutputter xmlOutputter2 = new AreaXMLOutputter(areaAggregator);
+        City city = new City(houses);
 
-        System.out.println(stringOutputter2.output());
-        System.out.println(xmlOutputter2.output());
+        AreaStringOutputter cityStringOutputter = new AreaStringOutputter(city);
+        AreaXMLOutputter cityXmlOutputter = new AreaXMLOutputter(city);
 
-        Ellipse ellipse1 = new Ellipse(3, 2);
-        areaAggregator.add(ellipse1);
-        double sum3 =areaAggregator.sum();
-
-        AreaStringOutputter stringOutputter3 = new AreaStringOutputter(areaAggregator);
-        AreaXMLOutputter xmlOutputter3 = new AreaXMLOutputter(areaAggregator);
-
-        System.out.println(stringOutputter3.output());
-        System.out.println(xmlOutputter3.output());
-
-        House house1 = new House(100);
-        areaAggregator.add(house1);
-
-        AreaStringOutputter stringOutputter4 = new AreaStringOutputter(areaAggregator);
-        AreaXMLOutputter xmlOutputter4 = new AreaXMLOutputter(areaAggregator);
-
-        System.out.println(stringOutputter4.output());
-        System.out.println(xmlOutputter4.output());
+        System.out.println(cityStringOutputter.output());
+        System.out.println(cityXmlOutputter.output());
     }
 }

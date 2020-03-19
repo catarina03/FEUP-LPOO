@@ -1,15 +1,15 @@
 public class AreaStringOutputter {
-    AreaAggregator areaAggregator;
+    SumProvider areaAggregator;
 
-    public AreaStringOutputter(AreaAggregator areaAggregator) {
+    public AreaStringOutputter(SumProvider areaAggregator) {
         this.areaAggregator = areaAggregator;
     }
 
-    public AreaAggregator getAreaAggregator() {
+    public SumProvider getAreaAggregator() {
         return areaAggregator;
     }
 
-    public void setAreaAggregator(AreaAggregator areaAggregator) {
+    public void setAreaAggregator(SumProvider areaAggregator) {
         this.areaAggregator = areaAggregator;
     }
 
