@@ -1,4 +1,3 @@
-public class Shape {
-    public Shape() {
-    }
+public interface Shape extends BasicShape{
+    double getArea();
 }

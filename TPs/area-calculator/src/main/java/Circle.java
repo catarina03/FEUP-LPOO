@@ -1,4 +1,4 @@
-public class Circle extends Shape{
+public class Circle implements Shape{
     int radius;
 
     public Circle(int radius) {
@@ -11,5 +11,10 @@ public class Circle extends Shape{
 
     public void setRadius(int radius) {
         this.radius = radius;
+    }
+
+    @Override
+    public double getArea(){
+        return Math.PI * Math.pow(radius, 2);
     }
 }
