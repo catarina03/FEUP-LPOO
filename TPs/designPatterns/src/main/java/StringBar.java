@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 public class StringBar extends Bar {
     private boolean happyHour;
 
     public StringBar() {
         this.happyHour = false;
+        this.observers = new ArrayList<BarObserver>();
     }
 
     @Override
@@ -20,5 +23,9 @@ public class StringBar extends Bar {
     public void endHappyHour(){
         happyHour = false;
         notifyObservers();
+    }
+
+    public void order(StringDrink drink, StringRecipe recipe){
+        recipe.mix(drink);
     }
 }

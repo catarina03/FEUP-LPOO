@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Bar {
-    private List<BarObserver> observers;
+    public List<BarObserver> observers;
 
     public Bar() {
         observers = new ArrayList<BarObserver>();
