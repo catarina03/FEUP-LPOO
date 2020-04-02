@@ -30,6 +30,6 @@ public class OrderLine {
     }
 
     public String toString(){
-        return this.product.getName() + "(x" + this.quantity + "):" + (getTotal());
+        return this.product.getName() + "(x" + this.quantity + "): " + (getTotal()) + "\n";
     }
 }
