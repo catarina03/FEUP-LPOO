@@ -26,11 +26,22 @@ TPs/area-calculator/gradlew
 TPs/area-calculator/gradlew.bat
 TPs/area-calculator/settings.gradle
 
+TPs/numbers/gradle/
+TPs/numbers/build/
+TPs/numbers/.gradle/
+TPs/numbers/.idea/
+TPs/numbers/build.gradle
+TPs/numbers/gradlew
+TPs/numbers/gradlew.bat
+TPs/numbers/settings.gradle
+
 TPs/designPatterns/.gradle/
 TPs/designPatterns/.idea/
 TPs/designPatterns/build.gradle
 TPs/designPatterns/build/
+TPs/designPatterns/gradle/
 TPs/designPatterns/settings.gradle
+TPs/designPatterns/gradlew*
 
 TPs/refactoring/build/
 TPs/refactoring/gradle/
