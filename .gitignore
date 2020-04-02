@@ -32,3 +32,11 @@ TPs/designPatterns/build.gradle
 TPs/designPatterns/build/
 TPs/designPatterns/settings.gradle
 
+TPs/refactoring/build/
+TPs/refactoring/gradle/
+TPs/refactoring/.gradle/
+TPs/refactoring/.idea/
+TPs/refactoring/*.gradle
+TPs/refactoring/gradlew
+TPs/refactoring/*.bat
+
