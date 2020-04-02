@@ -5,6 +5,7 @@ public class SimpleOrder {
     private double price;
 
     public SimpleOrder(double price) {
+        this.discount = new NullDiscount();
         this.price = price;
     }
 
@@ -13,9 +14,6 @@ public class SimpleOrder {
     }
 
     public double getTotal() {
-        if (discount == null)
-            return price;
-        else
-            return discount.applyDiscount(price);
+        return discount.applyDiscount(price);
     }
 }
