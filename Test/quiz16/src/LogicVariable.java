@@ -28,6 +28,7 @@ public class LogicVariable {
         return value;
     }
 
+    /*
     public void setValue(boolean value) {
         this.value = value;
         for (LogicVariable var : Global.inputs){
@@ -39,6 +40,12 @@ public class LogicVariable {
                 }
             }
         }
+    }
+
+     */
+
+    public void setValue(boolean value){
+        this.value = value;
     }
 
     public LogicGate getCalculatedBy() {

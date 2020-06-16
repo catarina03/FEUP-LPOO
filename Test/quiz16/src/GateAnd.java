@@ -9,12 +9,24 @@ public class GateAnd extends LogicGate {
 
         calculate();
 
+        if (input1.getCalculatedBy() != null){
+            for (LogicVariable var : input1.getCalculatedBy().getInputs()){
+                if (output.equals(var)) throw new CycleException();
+            }
+        }
+        if (input2.getCalculatedBy() != null){
+            for (LogicVariable var : input2.getCalculatedBy().getInputs()){
+                if (output.equals(var)) throw new CycleException();
+            }
+        }
+
         if (w1.getCalculatedBy() == null) w1.setCalculatedBy(this);
         else throw new ColisionException();
 
         w1.setFormula(getSymbol() + "(" + x1.getFormula() + "," + x2.getFormula() + ")");
         setOutput(w1);
 
+        /*
         Global.inputs.add(input1);
         Global.inputs.add(input2);
         for (LogicVariable var : Global.inputs){
@@ -22,6 +34,8 @@ public class GateAnd extends LogicGate {
                 throw new CycleException();
             }
         }
+
+         */
     }
 
     @Override

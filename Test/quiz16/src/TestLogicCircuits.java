@@ -156,7 +156,7 @@ public class TestLogicCircuits {
         assertEquals(false, y1.getValue());
 
         x3.setValue(false);
-        assertEquals(true, y1.getValue());
+        assertEquals(true, y1.getValue());  //FAILS
     }
 
 
@@ -166,7 +166,6 @@ public class TestLogicCircuits {
         LogicVariable w1 = new LogicVariable("w1");
         LogicVariable w2 = new LogicVariable("w2");
         LogicVariable w3 = new LogicVariable("w3");
-
 
         LogicGate p1 = new GateAnd(w3, w2, w1);
         LogicGate p2 = new GateNot(w2, w3);

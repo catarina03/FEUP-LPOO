@@ -7,18 +7,27 @@ public class GateNot extends LogicGate {
 
         calculate();
 
+        if (input1.getCalculatedBy() != null){
+            for (LogicVariable var : input1.getCalculatedBy().getInputs()){
+                if (output.equals(var)) throw new CycleException();
+            }
+        }
+
         if (y1.getCalculatedBy() == null) y1.setCalculatedBy(this);
         else throw new ColisionException();
 
         y1.setFormula(getSymbol() + "(" + w2.getFormula() + ")");
         setOutput(y1);
 
+        /*
         Global.inputs.add(input1);
         for (LogicVariable var : Global.inputs){
             if (var.equals(y1)){
                 throw new CycleException();
             }
         }
+
+         */
     }
 
     @Override

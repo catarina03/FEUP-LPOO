@@ -5,8 +5,6 @@ public abstract class LogicGate {
 
     public LogicGate(LogicVariable output) {
         this.output = output;
-        Global.outputs.add(output);
-        Global.gates.add(this);
     }
 
     public void setOutput(LogicVariable output) {
