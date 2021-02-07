@@ -1,7 +1,7 @@
 # FEUP-LPOO
 
 Exercises and project developed during the Object-oriented Programming Laboratory curricular unit @ FEUP.  
-Project code written with [André Daniel Gomes](https://github.com/Ca-moes).
+Project code written in collaboration with [André Daniel Gomes](https://github.com/Ca-moes).
 
 ## General Info
 
